@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(./images/m1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*whole bg*/
+}
+.box {
+  position: relative;
+  width: 385px;
+  height: 640px;
+  background: #393a3a; /*running line box area*/
+  border-radius: 20px 20px;
+  overflow: hidden;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -49%;
+  left: -0.9%;
+  width: 520px;
+  height: 590px;
+  background: linear-gradient(60deg, transparent, #f6f9a2, #f6f9a2);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -49%;
+  left: -0.9%;
+  width: 520px;
+  height: 590px;
+  background: linear-gradient(60deg, transparent, #d9138a, #d9138a);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+form {
+  position: absolute;
+  inset: 2px;
+  background-image: url(./images/hi.png);
+  border-radius: 50px 50px; /* login page color*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  color: #f6f9a2;
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+.inputBox {
+  position: relative;
+
+  width: 320px;
+  margin-top: 15px;
+}
+
+.inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 1px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #611103;
+  background: linear-gradient(90deg, #fcfcfc, #febae3);
+  border-radius: 90px; /*username and password text*/
+  font-size: 18px;
+  padding: 6px;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+
+#sub     /* Next button */ {
+  font-size: 20px;
+  background: linear-gradient(90deg, #fcfcfc, #febae3);
+  padding: 1px;
+  margin-top: 20px;
+  border-radius: 90px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#sub:active {
+  background: linear-gradient(90deg, #fff703, #ff96d5);
+  opacity: 0.8;
+}
+
+.text {
+  margin-bottom: 500px;
+  margin-left: 400px;
+}
+
+.form-label {
+  color: #f6f9a2;
+}

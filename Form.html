@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <form>
+            <h2>Welcome to Our Survey Form!</h2>
+
+            <div class="inputBox">
+                <label for="validationDefault01" class="form-label">Name</label>
+                <input type="text" name="name" placeholder="Enter your name">
+                <i></i>
+            </div>
+
+            <div class="inputBox">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" id="inputEmail4" name="email" placeholder="xyz@gmail.com">
+                <i></i>
+            </div>
+
+            <div class="inputBox">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" name="phone" placeholder="10 digits">
+                <i></i>
+            </div>
+
+            <div class="inputBox">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" name="address" placeholder="Enter your address">
+                <i></i>
+            </div>
+
+            <div class="inputBox">
+                <label for="date" class="form-label">Date of service</label>
+                <input type="date" name="date" placeholder="dd-mm-yyyy">
+                <i></i>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="sub">Next</button>
+        </form>
+    </div>
+
+    <!-- JavaScript code to handle the button click -->
+    <script>
+        const email = document.getElementById('inputEmail4');
+        const phone = document.getElementById('phone');
+        const nextButton = document.getElementById('sub');
+
+        // Add a click event listener to the button
+        nextButton.addEventListener('click', function () {
+            event.preventDefault();
+
+            if (email.value === '') {
+                alert('Please enter your email before proceeding.');
+            } else if (phone.value === '') {
+                alert('Please enter your phone number.');
+            } else if (!/^\d{10}$/.test(phone.value)) {
+                alert('Phone number must have exactly 10 digits.');
+            } else {
+                // Store the email in session storage
+                sessionStorage.setItem('userEmail', email.value);
+                // Redirect to the survey page
+                window.open('survey.html', '_self');
+            }
+        });
+    </script>
+</body>
+
+</html>
